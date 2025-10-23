@@ -2,12 +2,12 @@
 
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-import { createNote } from "../../lib/api";
 import type { CreateNoteProps, Tag } from "../../types/note";
 
 import css from "./NoteForm.module.css";
 import { useRouter } from "next/navigation";
 import { useNoteDraftStore } from "@/lib/store/noteStore";
+import { createNote } from "@/lib/api/clientApi";
 
 const NoteForm = () => {
   const router = useRouter();

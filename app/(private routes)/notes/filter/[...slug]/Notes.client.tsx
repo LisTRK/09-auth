@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchNotes } from "@/lib/api";
+// import { fetchNotes } from "@/lib/api/apiTemp";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
@@ -10,6 +10,7 @@ import SearchBox from "@/components/SearchBox/SearchBox";
 import NoteList from "@/components/NoteList/NoteList";
 import { Tag } from "@/types/note";
 import Link from "next/link";
+import { fetchNotes } from "@/lib/api/clientApi";
 
 interface NotesClientProps {
   tag?: Tag;

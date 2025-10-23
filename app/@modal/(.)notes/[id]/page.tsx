@@ -1,4 +1,3 @@
-import { getNoteById } from "@/lib/api";
 import {
   dehydrate,
   HydrationBoundary,
@@ -6,6 +5,7 @@ import {
 } from "@tanstack/react-query";
 import React from "react";
 import NotePreviewClient from "./NotePreview.client";
+import { getNoteById } from "@/lib/api/clientApi";
 
 type generateMetadataProps = {
   params: Promise<{ id: string }>;

@@ -1,10 +1,11 @@
 "use client";
-import { getNoteById } from "@/lib/api";
+
 import { useQuery } from "@tanstack/react-query";
 // import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import css from "./NotePreview.module.css";
 import Modal from "@/components/Modal/Modal";
+import { getNoteById } from "@/lib/api/clientApi";
 
 const NotePreviewClient = () => {
   const { id } = useParams<{ id: string }>();

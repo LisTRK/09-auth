@@ -17,5 +17,4 @@ export interface CreateNoteProps{
       tag: Tag,
 }
 
-
 export type Tag = "Todo" |"Work"|"Personal"|"Meeting"|"Shopping"

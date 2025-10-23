@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 
 import { persist } from "zustand/middleware";
-import { CreateNoteProps, Tag } from '@/types/note';
+import { Tag } from '@/types/note';
 
 
 interface DraftNote{
