@@ -1,4 +1,4 @@
-import css from "./NoteDetailst.module.css";
+import css from "./NoteDetails.module.css";
 import { FadeLoader } from "react-spinners";
 
 const Loader = () => {
