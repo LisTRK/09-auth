@@ -4,8 +4,8 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { getNoteById } from "@/lib/api/clientApi";
-import css from "./NoteDetails.module.css";
 import { FadeLoader } from "react-spinners";
+import css from "./NoteDetails.module.css";
 
 const NoteDetailsClient = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,10 +19,10 @@ const NoteDetailsClient = () => {
 
   if (isLoading)
     return (
-      <p>
+      <div className={css.loader}>
         <FadeLoader />
-        Loading, please wait...
-      </p>
+        <p>Loading, please wait...</p>
+      </div>
     );
   if (error) return <p>Could not fetch note details. {error.message}</p>;
 
