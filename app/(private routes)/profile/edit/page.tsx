@@ -17,7 +17,7 @@ const EditProfilePage = () => {
       username: formData.get("username") as string,
     };
 
-    updatedMe(newUsername);
+    await updatedMe(newUsername);
     setUser({ ...user, username: newUsername.username });
     router.push("/profile");
   };
@@ -36,7 +36,7 @@ const EditProfilePage = () => {
 
         <form action={handleSubmit} className={css.profileInfo}>
           <div className={css.usernameWrapper}>
-            <label htmlFor="username">Username:</label>
+            <label htmlFor="username">Username: {user.username}</label>
             <input
               id="username"
               name="username"
@@ -45,7 +45,7 @@ const EditProfilePage = () => {
             />
           </div>
 
-          <p>Email: user_email@example.com</p>
+          <p>Email: {user.email}</p>
 
           <div className={css.actions}>
             <button type="submit" className={css.saveButton}>

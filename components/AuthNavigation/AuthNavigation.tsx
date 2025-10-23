@@ -9,7 +9,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const AuthNavigation = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-
+  const user = useAuthStore((state) => state.user);
   const clearAuthenticated = useAuthStore(
     (state) => state.clearIsAuthenticated
   );
@@ -18,7 +18,7 @@ const AuthNavigation = () => {
   const handleLogout = async () => {
     await logout();
     clearAuthenticated();
-    router.replace("/");
+    router.replace("/sign-in");
   };
 
   const queryClient = useQueryClient();
@@ -42,7 +42,7 @@ const AuthNavigation = () => {
             </Link>
           </li>
           <li className={css.navigationItem}>
-            <p className={css.userEmail}>Email</p>
+            <p className={css.userEmail}>{user.username ?? user.email}</p>
             <button
               onClick={() => mutation.mutate()}
               className={css.logoutButton}

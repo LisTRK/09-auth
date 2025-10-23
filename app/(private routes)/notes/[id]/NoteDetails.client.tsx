@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { getNoteById } from "@/lib/api/clientApi";
-import css from "./NoteDetailst.module.css";
+import css from "./NoteDetails.module.css";
 
 const NoteDetailsClient = () => {
   const { id } = useParams<{ id: string }>();
@@ -17,7 +17,7 @@ const NoteDetailsClient = () => {
   });
 
   if (isLoading) return <p>Loading, please wait...</p>;
-  if (error) return <p>Could not fetch the list of notes. {error.message}</p>;
+  if (error) return <p>Could not fetch note details. {error.message}</p>);
 
   return (
     <>

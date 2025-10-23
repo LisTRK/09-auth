@@ -16,7 +16,6 @@ export async function generateMetadata({
   params,
 }: generationMetadataProps): Promise<Metadata> {
   const { slug } = await params;
-  console.log("slug: ", slug);
 
   const tag: Tag | string = slug[0];
   return {
@@ -51,8 +50,8 @@ const NotesPage = async ({ params }: generationMetadataProps) => {
   await queryClient.prefetchQuery({
     queryKey: ["notes", tag],
     queryFn: () => {
-      if (tag) return fetchNotesServer();
-      else return fetchNotesServer("", 1, tag);
+      if (tag) return fetchNotesServer("", 1, tag);
+      else return fetchNotesServer();
     },
   });
 
