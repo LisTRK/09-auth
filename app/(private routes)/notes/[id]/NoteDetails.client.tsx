@@ -9,7 +9,6 @@ import css from "./NoteDetailst.module.css";
 const NoteDetailsClient = () => {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
-  console.log("router: ", router);
 
   const { data, error, isLoading } = useQuery({
     queryKey: ["note", id],
