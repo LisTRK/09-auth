@@ -17,7 +17,7 @@ const NoteDetailsClient = () => {
   });
 
   if (isLoading) return <p>Loading, please wait...</p>;
-  if (error) return <p>Could not fetch note details. {error.message}</p>);
+  if (error) return <p>Could not fetch note details. {error.message}</p>;
 
   return (
     <>
