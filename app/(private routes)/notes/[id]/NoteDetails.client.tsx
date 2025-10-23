@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { getNoteById } from "@/lib/api/clientApi";
 import css from "./NoteDetails.module.css";
+import { FadeLoader } from "react-spinners";
 
 const NoteDetailsClient = () => {
   const { id } = useParams<{ id: string }>();
@@ -16,7 +17,13 @@ const NoteDetailsClient = () => {
     refetchOnMount: false,
   });
 
-  if (isLoading) return <p>Loading, please wait...</p>;
+  if (isLoading)
+    return (
+      <p>
+        <FadeLoader />
+        Loading, please wait...
+      </p>
+    );
   if (error) return <p>Could not fetch note details. {error.message}</p>;
 
   return (
