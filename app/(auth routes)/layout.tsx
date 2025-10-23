@@ -3,6 +3,7 @@
 import { useAuthStore } from "@/lib/store/authStore";
 import { useRouter } from "next/navigation";
 import { ReactNode, useEffect, useState } from "react";
+import { FadeLoader } from "react-spinners";
 
 interface PublicLayoutProps {
   children: ReactNode;
@@ -21,7 +22,18 @@ const PublicLayout = ({ children }: PublicLayoutProps) => {
     setLoading(false);
   }, [clearIsAuthenticated, router]);
 
-  return <>{loading ? <div>Loading...</div> : children}</>;
+  return (
+    <>
+      {loading ? (
+        <div>
+          <FadeLoader />
+          Loading...
+        </div>
+      ) : (
+        children
+      )}
+    </>
+  );
 };
 
 export default PublicLayout;
