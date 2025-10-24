@@ -2,10 +2,10 @@
 
 import css from "./AuthNavigation.module.css";
 import { useAuthStore } from "@/lib/store/authStore";
-import Link from "next/dist/client/link";
 import { useRouter } from "next/navigation";
 import { logout } from "@/lib/api/clientApi";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import Link from "next/link";
 
 const AuthNavigation = () => {
   const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
